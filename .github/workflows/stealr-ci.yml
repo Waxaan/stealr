@@ -1,0 +1,33 @@
+name: Stealr CI
+
+on:
+  push:
+    paths:
+      - 'stealr/**'
+  pull_request:
+    paths:
+      - 'stealr/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8, 3.12]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        cd stealr
+        pip install poetry
+        poetry install
+    - name: Run tests
+      run: |
+        cd stealr
+        poetry run tox

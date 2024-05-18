@@ -1,0 +1,32 @@
+name: Hoster CI
+
+on:
+  push:
+    paths:
+      - 'hoster/**'
+  pull_request:
+    paths:
+      - 'hoster/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.12]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Build Docker image
+      run: |
+        cd hoster
+        docker build -t hoster .
+    - name: Run tests
+      run: |
+        cd hoster
+        docker run hoster pytest
