@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "trainer"
+version = "0.1.0"
+description = "Training pipeline for the models."
+authors = ["Daniel Kamphake <daniel.kamphake@googlemail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytorch = "^2.3.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"

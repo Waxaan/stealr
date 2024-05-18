@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "hoster"
+version = "0.1.0"
+description = "The deployment package for stealr"
+authors = ["Daniel Kamphake <daniel.kamphake@googlemail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastAPI = "^0.111.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
