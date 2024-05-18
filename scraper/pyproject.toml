@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "scraper"
+version = "0.1.0"
+description = "A service for scraping images."
+authors = ["Daniel Kamphake <daniel.kamphake@googlemail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+beautifulsoup4 = "^4.9.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
