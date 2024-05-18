@@ -9,4 +9,9 @@ python = "^3.9"
 fastAPI = "^0.111.0"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.4"
+pytest = "^8.2.0"
+black = "^24.4.2"
+flake8 = "^7.0.0"
+mypy = "^1.10.0"
+sphinx = "^7.3.7"
+sphinx-autobuild = "^2024.4.16"
